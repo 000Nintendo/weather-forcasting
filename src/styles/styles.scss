@@ -1,0 +1,28 @@
+@import url("./colors.scss");
+@import url("./classes.scss");
+@import url("./variables.scss");
+
+input {
+  height: 44px;
+  border-radius: 50px;
+  background-color: var(--primary-input-bg-color);
+  outline: none;
+  border: none;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0 24px;
+  font-family: var(--font-dm-sans-regular);
+  font-style: normal;
+  color: var(--primary-input-text-color);
+  &:-internal-autofill-selected {
+    appearance: menulist-button !important;
+    background-image: none !important;
+    background-color: -internal-light-dark(
+      rgb(232, 240, 254),
+      rgba(70, 90, 126, 0.4)
+    ) !important;
+    color: fieldtext !important;
+  }
+}
