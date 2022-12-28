@@ -1,0 +1,23 @@
+.search-input {
+  .address-autocomplete {
+    width: 100%;
+    border-radius: 50px;
+    background: var(--primary-input-bg-color);
+
+    input {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      border-radius: 50px;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-radius: 50px;
+      //   border: 1px solid var(--secondary);
+    }
+
+    span {
+      font-family: "Montserrat", sans-serif !important;
+      font-weight: 400;
+    }
+  }
+}

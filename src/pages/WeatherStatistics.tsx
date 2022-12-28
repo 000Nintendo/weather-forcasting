@@ -5,6 +5,7 @@ import { IForcastData, IWeatherForcastResponse } from "../@types/api";
 import moment from "moment";
 
 import "./scss/WeatherStatistics.scss";
+import SearchInput from "../components/Search/SearchInput";
 
 const WeatherStatistics = () => {
   const [state, setState] = useState({
@@ -125,11 +126,8 @@ const WeatherStatistics = () => {
           <header>
             <h1 className="text-center">Weather Forcasting</h1>
           </header>
-          <div className="weather-searchbar flex-column">
-            <label htmlFor="weather-input">Enter your Address</label>
-            <input type="text" id="weather-input" />
-            <button type="button">Search</button>
-          </div>
+
+          <SearchInput />
         </div>
         <div className="weather-historical-records">
           <div className="weather-data-container">
@@ -203,6 +201,9 @@ const WeatherStatistics = () => {
                   </h3>
                   <img src={day.iconLink} alt="weather-logo" />
                   <p className="temp montserrat-regular">{day.temperature}°C</p>
+                  <p className="weather montserrat-regular text-secondary">
+                    {day.weather}
+                  </p>
                 </div>
               );
             })}

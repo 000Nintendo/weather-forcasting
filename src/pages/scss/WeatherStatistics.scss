@@ -27,19 +27,25 @@
     .weather-searchbar {
       gap: 8px;
     }
-    button {
-      width: 20%;
+
+    .search-button {
+      display: flex;
+      height: 40px;
+      width: 150px;
+      align-items: center;
+      justify-content: center;
       margin: auto;
       padding: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      border-radius: 4px;
+      border-radius: 30px;
       border: 1px solid var(--primary-btn-border-color);
-      margin-top: 0.5rem;
+      margin-top: 10px !important;
     }
   }
+
   .chart-container {
     width: 100%;
     .weather-forcast-chart {
@@ -126,6 +132,9 @@
       p {
         font-size: 13px;
         margin-top: 10px;
+      }
+      .weather {
+        text-align: center;
       }
       &.latest-record {
         background-color: var(--weather-latest-card-bg-color);
