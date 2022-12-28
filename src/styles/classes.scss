@@ -3,11 +3,47 @@
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
+// fonts
+
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700 !important;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-main {
+  color: var(--primary-main);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.linear-gradient-primary {
+  background: var(--linear-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

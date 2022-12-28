@@ -78,3 +78,13 @@ export interface IWeatherForcastResponse {
   data: IWeatherData;
   currentobservation: IWeatherCurrentObservation;
 }
+
+export interface IForcastData {
+  startPeriodName: string;
+  startValidTime: string;
+  tempLabel: string;
+  temperature: string;
+  weather: string;
+  iconLink: string;
+  value: string;
+}
