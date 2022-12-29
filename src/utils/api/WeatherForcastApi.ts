@@ -35,18 +35,4 @@ export class WeatherForcastApi {
       };
     }
   };
-
-  static getDifferedState = async (
-    setState: React.Dispatch<React.SetStateAction<any>>
-  ) => {
-    let differedState;
-    await new Promise((resolve: any) =>
-      setState((data: any) => {
-        differedState = data;
-        resolve();
-        return data;
-      })
-    );
-    return differedState;
-  };
 }

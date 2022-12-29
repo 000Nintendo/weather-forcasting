@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import { WeatherForcastApi } from "../utils/api/WeatherForcastApi";
 import { IForcastData, IWeatherForcastResponse } from "../@types/api";
 import moment from "moment";
-
-import "./scss/WeatherStatistics.scss";
 import SearchInput from "../components/Search/SearchInput";
 import WeatherCard from "../components/Cards/WeatherCard";
+
+import "./scss/WeatherStatistics.scss";
 
 const WeatherStatistics = () => {
   const [state, setState] = useState({
