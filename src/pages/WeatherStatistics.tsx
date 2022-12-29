@@ -6,6 +6,7 @@ import moment from "moment";
 
 import "./scss/WeatherStatistics.scss";
 import SearchInput from "../components/Search/SearchInput";
+import WeatherCard from "../components/Cards/WeatherCard";
 
 const WeatherStatistics = () => {
   const [state, setState] = useState({
@@ -83,18 +84,15 @@ const WeatherStatistics = () => {
       const days = response.data.time.startPeriodName;
 
       days.forEach((day: string, idx: number) => {
-        if (idx % 2 === 0) {
-          daysForcast.push({
-            startPeriodName: day,
-            startValidTime: response.data.time.startValidTime[idx] ?? "",
-            tempLabel: response.data.time.tempLabel[idx] ?? "",
-            temperature: response.data.data.temperature[idx] ?? "",
-            weather: response.data.data.weather[idx] ?? "",
-            iconLink: response.data.data.iconLink[idx] ?? "",
-            value: response.data.data.temperature[idx] ?? "",
-          });
-        }
-        return;
+        daysForcast.push({
+          startPeriodName: day,
+          startValidTime: response.data.time.startValidTime[idx] ?? "",
+          tempLabel: response.data.time.tempLabel[idx] ?? "",
+          temperature: response.data.data.temperature[idx] ?? "",
+          weather: response.data.data.weather[idx] ?? "",
+          iconLink: response.data.data.iconLink[idx] ?? "",
+          value: response.data.data.temperature[idx] ?? "",
+        });
       });
 
       console.log("daysForcast >>>", daysForcast);
@@ -191,21 +189,13 @@ const WeatherStatistics = () => {
             </div>
           </div>
           <div className="weather-history">
-            {state?.forcastData.map((day, idx) => {
-              return (
-                <div
-                  className={`weather-card ${idx === 0 ? "latest-record" : ""}`}
-                >
-                  <h3 className="period-name montserrat-regular">
-                    {day.startPeriodName}
-                  </h3>
-                  <img src={day.iconLink} alt="weather-logo" />
-                  <p className="temp montserrat-regular">{day.temperature}°C</p>
-                  <p className="weather montserrat-regular text-secondary">
-                    {day.weather}
-                  </p>
-                </div>
-              );
+            {state?.forcastData.slice(0, 7).map((day, idx) => {
+              return <WeatherCard weatherData={day} />;
+            })}
+          </div>
+          <div className="weather-history weather-cards-next-row">
+            {state?.forcastData.slice(7).map((day, idx) => {
+              return <WeatherCard weatherData={day} />;
             })}
           </div>
         </div>
