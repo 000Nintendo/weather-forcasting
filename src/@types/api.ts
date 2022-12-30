@@ -1,4 +1,4 @@
-import { integerPropType } from "@mui/utils";
+// import { integerPropType } from "@mui/utils";
 
 export interface IApiResponse<T> {
   data?: T | any;
@@ -97,6 +97,4 @@ export interface IForcastData {
 
 export interface IGeoCodingGetAddressDataParams {
   address: string;
-  benchmark?: number;
-  format: string;
 }

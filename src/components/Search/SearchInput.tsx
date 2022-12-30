@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
 import "./SearchInput.scss";
 
-const SearchInput = () => {
+interface ISearchInput {
+  getWeatherForcastData: (address: string | null) => void;
+}
+
+const SearchInput: React.FC<ISearchInput> = ({ getWeatherForcastData }) => {
+  const [address, setAddress] = useState<string | null>(null);
+
+  console.log(address, "address");
+  // const getWeatherData = () => {
+  //   getWeatherForcastData(address);
+  // };
+
+  // const isValueExist = locations.some((city) => city.value.includes(address));
   return (
     <div className="weather-searchbar search-input flex-column">
       {/* <label htmlFor="weather-input">Enter your Address</label> */}
       <div className="autocomplete-container">
         <Autocomplete
           disablePortal
-          // open={true}
+          // open={address.length > 1 ? true : false}
           className="address-autocomplete"
           id="combo-box-demo"
+          value={address}
+          freeSolo
+          onInputChange={(e, value: string) => setAddress(value)}
           options={locations}
           sx={{ width: 300 }}
           renderInput={(params) => (
@@ -22,7 +37,13 @@ const SearchInput = () => {
         />
       </div>
 
-      <button type="button" className="search-button">
+      <button
+        type="button"
+        className="search-button"
+        onClick={() => {
+          getWeatherForcastData(address);
+        }}
+      >
         Search
       </button>
     </div>
@@ -32,23 +53,23 @@ const SearchInput = () => {
 const locations = [
   {
     label: "San Angelo TX",
-    value: "(San Angelo TX)31.446,-100.452",
+    value: "San Angelo TX",
   },
   {
     label: "Albany TX",
-    value: "(Albany TX)32.7234,-99.2963",
+    value: "Albany TX",
   },
   {
     label: "Brady TX",
-    value: "(Brady TX)31.1348,-99.3365",
+    value: "Brady TX",
   },
   {
     label: "Coleman TX",
-    value: "(Coleman TX)31.8272,-99.4268",
+    value: "Coleman TX",
   },
   {
     label: "Brownwood TX",
-    value: "(Brownwood TX)31.8272,-99.4268",
+    value: "Brownwood TX",
   },
   {
     label: "an Angelo TX",

@@ -5,6 +5,13 @@
   flex-direction: column;
   align-items: center;
 
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+  }
+
   .weather-historical-records {
     display: flex;
     flex-direction: column;
@@ -42,7 +49,7 @@
       font-size: 1rem;
       border-radius: 30px;
       border: 1px solid var(--primary-btn-border-color);
-      margin-top: 10px !important;
+      margin-top: 20px !important;
     }
   }
 
@@ -52,6 +59,23 @@
       path {
         position: absolute;
         left: 20px !important;
+      }
+    }
+    .custom-tooltip {
+      padding: 15px 10px;
+      border: none !important;
+      border-radius: 10px;
+      outline: none !important;
+      background: var(--tooltip-bg-primary);
+
+      p {
+        color: var(--tooltip-text-primary);
+        font-family: var(--font-dm-sans-regular);
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
       }
     }
   }
@@ -85,8 +109,23 @@
       .temp-conainer {
         display: flex;
         margin-left: 5px;
+        .temp-unit {
+          display: flex;
+          :nth-child(1) {
+            border-right: 1px solid #565656;
+          }
+
+          p {
+            padding: 0 8px;
+            cursor: pointer;
+          }
+        }
+
         h2 {
           font-size: 3rem;
+        }
+        .font-bold {
+          font-weight: 700;
         }
       }
     }

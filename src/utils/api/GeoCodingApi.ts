@@ -4,22 +4,12 @@ import { IApiResponse, IGeoCodingGetAddressDataParams } from "../../@types/api";
 export class GeoCodingApi {
   static getAddressData = async ({
     address,
-    benchmark = 2020,
-    format = "json",
   }: IGeoCodingGetAddressDataParams): Promise<IApiResponse<any>> => {
     try {
-      const params = {
-        address,         
-        benchmark,
-        format,
-      };
       const res = await axios.get(
-        `${process.env.REACT_APP_GEO_LOCATION_SERVICE_API_ENDPOINT}`,
-        {
-          params,
-        }
+        `${process.env.REACT_APP_GEO_LOCATION_SERVICE_API_ENDPOINT}/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
       );
-      if (res.status !== 200) {
+      if (res?.data?.error_message) {
         return {
           error: "Something went wrong!",
         };
