@@ -1,3 +1,5 @@
+import { integerPropType } from "@mui/utils";
+
 export interface IApiResponse<T> {
   data?: T | any;
   error?: string;
@@ -87,4 +89,14 @@ export interface IForcastData {
   weather: string;
   iconLink: string;
   value: string;
+}
+
+/**
+ * Geocoding apis
+ */
+
+export interface IGeoCodingGetAddressDataParams {
+  address: string;
+  benchmark?: number;
+  format: string;
 }

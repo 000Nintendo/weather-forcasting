@@ -124,7 +124,6 @@ const WeatherStatistics = () => {
           <header>
             <h1 className="text-center">Weather Forcasting</h1>
           </header>
-
           <SearchInput />
         </div>
         <div className="weather-historical-records">
