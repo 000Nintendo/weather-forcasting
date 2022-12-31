@@ -33,6 +33,11 @@
     }
     .weather-searchbar {
       gap: 8px;
+
+      .or-seperator {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .search-button {
@@ -184,5 +189,31 @@
 
   .weather-cards-next-row {
     margin-top: 50px;
+  }
+}
+
+.forcast-not-found-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 100px;
+
+  img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    // filter: grayscale(0.2);
+  }
+
+  p {
+    margin-top: 20px;
+  }
+
+  .reset-button {
+    border: none;
+    background-color: transparent;
+    margin-top: 20px;
   }
 }

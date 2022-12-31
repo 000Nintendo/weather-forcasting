@@ -1,0 +1,3 @@
+export class ResponseCodes {
+  static FORCAST_NOT_FOUND_FOR_LOCATION = "FORCAST_NOT_FOUND_FOR_LOCATION";
+}
